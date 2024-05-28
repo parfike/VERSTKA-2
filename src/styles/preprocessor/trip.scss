@@ -1,0 +1,175 @@
+.trip {
+    margin-top: 500px;
+}
+
+.trip-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.trip-head__title {
+    font-size: 35px;
+}
+
+.trip-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-bottom: 130px;
+}
+
+.trip-grid__item {
+    color: #fff;
+    font-size: 50px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    h3 {
+        position: absolute;
+        left: 30px;
+        bottom: 23px;
+        z-index: 10;
+        transition: bottom .2s ease-in-out, left .2s ease-in-out;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: rgba(21, 24, 36, .4);
+        transition: background-color .2s ease-in-out;
+    }
+
+    &:hover {
+
+        h3 {
+            left: 40px;
+            bottom: 33px;
+        }
+
+        &::after {
+            background-color: rgba(21, 24, 36, .8);
+        }
+    }
+}
+
+.trip-grid__item.big {
+    grid-column: span 3;
+    height: 355px;
+}
+
+.trip-grid__item.small {
+    grid-column: span 2;
+    height: 284px;
+}
+
+.trip-grid__item.item-1 {
+    background-image: url('../imgs/trip/1.png');
+}
+
+.trip-grid__item.item-2 {
+    background-image: url('../imgs/trip/2.png');
+}
+
+.trip-grid__item.item-3 {
+    background-image: url('../imgs/trip/3.png');
+}
+
+.trip-grid__item.item-4 {
+    background-image: url('../imgs/trip/4.png');
+}
+
+.trip-grid__item.item-5 {
+    background-image: url('../imgs/trip/5.png');
+}
+
+.trip-block {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 70px;
+    margin-bottom: 85px;
+}
+
+.trip-block__item {
+    display: flex;
+    gap: 100px;
+}
+
+.trip-block__item.reverse {
+    flex-direction: row-reverse;
+}
+
+.trip-block__item_img {
+    width: 100%;
+    img {
+        width: 100%;
+    }
+}
+
+.trip-block__item_descr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 {
+        font-size: 30px;
+        font-weight: 400;
+        margin-bottom: 85px;
+    }
+
+    p {
+        margin-bottom: 60px;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .trip {
+        margin-top: 0;
+    }
+
+    .trip-head {
+        margin-bottom: 18px;
+    }
+
+    .trip-head__title {
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+    .trip-grid {
+        gap: 6px;
+        margin-bottom: 70px;
+    }
+    
+    .trip-grid__item {
+        font-size: 16px;
+
+        h3 {
+            left: 12px;
+        }
+    }
+
+    .trip-grid__item.big {
+        height: 255px;
+    }
+
+    .trip-grid__item.small {
+        height: 184px;
+    }
+
+    .trip-block__item {
+        gap: 20px;
+    }
+
+    .trip-block__item_descr h3 {
+        font-size: 18px;
+        margin-bottom: 22px;
+    }
+
+    .trip-block__item_descr p {
+        margin-bottom: 18px;
+    }
+}
